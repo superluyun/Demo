@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.btn{
+			margin-top:10px;
+		}
+		#d2{
+			width: 100px;
+			height: 150px;
+			border: red solid 1px;
+			display: none;    
+		}
+	</style>
+</head>
+<body>
+	<div id="d1" onclick="btn(this,'d1')" style="width: 20px;height: 20px;background-color: red;"></div>
+	<div><button class="btn">点我1</button></div>
+	<div><button class="btn">点我2</button></div>
+	<div><button class="btn">点我3</button></div>
+	<div id="d2"></div>
+</body>
+<script>
+	document.oncontextmenu = function(){
+　　		return false;
+	}
+	var btns = document.getElementsByClassName('btn');
+	for(var i=0;i<btns.length;i++){
+		btns[i].onblur = function(){
+			document.getElementById("d2").style.display = "none";
+		}
+		btns[i].onmouseup = function(e){
+			if(e.button == 2){
+				document.getElementById("d2").style.display = "block";
+			}
+		}	
+	}
+</script>
+
+<script>
+	function btn(argument,id) {
+		console.log(argument.id);
+		console.log(id);
+		alert(argumednt.id);
+	}
+</script>	
+</html>

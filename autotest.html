@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#d1{
+			height: 20px;
+			background-color: red;
+		}
+		#d2{
+			height: 20px;
+			background-color: blue;
+			display: none;
+		}
+		#d3{
+			height: 20px;
+			background-color: green;
+			display: none;
+		}
+	</style>
+	<script>
+		function show() {
+			var d2 = document.getElementById('d2');
+			var d3 = document.getElementById('d3');
+			if (d2.style.display == "none") {
+				d2.style.display = "block";
+				d3.style.display = "block";
+			}
+			else{
+				d2.style.display = "none";
+				d3.style.display = "none";
+			}
+		}
+	</script>
+</head>
+<body>
+<div id="d1" style="width: 200px;height: 200px;background-color: red; outline: none;" tabindex="0" onfocus="onfun()" onblur="onbfun()"><span>hello</span></div>
+<script>
+	function onfun(){
+		var d1 = document.getElementById("d1");
+		d1.style.background = "blue";
+		d1.style.color = "white";
+	}
+	function onbfun(){
+		var d1 = document.getElementById("d1");
+		d1.style.background = "red";
+		d1.style.color = "black";
+	}
+</script>
+</body>
+</html>
