@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="../layui/layui/css/layui.css">
+    <style>
+        .left,.right{
+            width:200px;
+            height: 280px;
+            background-color: #00f;
+        }
+        .left{
+            position: absolute;
+            top:0;
+            left: 100px;
+        }
+        .right{
+            position: absolute;
+            top:0;
+            right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bc" style="width: 100%;height:280px;position: relative;">
+        <div class="left"></div>
+        <div style="position: absolute; top:0; left:300px;width:calc(100% - 600px)">
+            <div class="layui-carousel" id="test1" lay-filter="test1">
+                <div carousel-item>
+                <div>条目1</div>
+                <div>条目2</div>
+                <div>条目3</div>
+                <div>条目4</div>
+                <div>条目5</div>
+                </div>
+            </div>
+        </div>
+        <div class="right"></div>
+    </div>
+    
+    <script src="../layui/layui/layui.js"></script>
+    <script>
+        layui.use('carousel', function(){
+            var carousel = layui.carousel;
+            //建造实例
+            carousel.render({
+                elem: '#test1'
+                ,width: '100%' //设置容器宽度
+                ,arrow: 'always' //始终显示箭头
+                //,anim: 'updown' //切换动画方式
+            });
+            //监听轮播切换事件
+            carousel.on('change(test1)', function(obj){ //test1来源于对应HTML容器的 lay-filter="test1" 属性值
+                console.log(obj.index); //当前条目的索引
+                console.log(obj.prevIndex); //上一个条目的索引
+                console.log(obj.item); //当前条目的元素对象
+                var bc = document.querySelector('#bc')
+                switch(obj.index){
+                    case 0:
+                        bc.style.background = '#f00';
+                        break;
+                    case 1:
+                        bc.style.background = '#0f0';
+                        break;
+                    case 2:
+                        bc.style.background = '#00f';
+                        break;
+                    case 3:
+                        bc.style.background = '#ff0';
+                        break;
+                    case 4:
+                        bc.style.background = '#fff';
+                        break;
+                }
+            }); 
+        });
+        
+    </script>
+</body>
+</html>
