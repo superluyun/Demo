@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>自定义滚动条</title>
+    <style>
+        #outset{
+            width: 600px;
+            height: 300px;
+            margin: 60px auto;
+            overflow: hidden;
+            box-shadow: 0 0 2px #888;
+            position: relative;
+        }
+         #outset:hover #right{
+            display: block;
+         }
+        #box{
+            height: 317px;
+            margin: 0 -1px -17px 0;
+            text-align: center;
+            overflow: scroll;
+        }
+        #centent{
+            height: auto;
+        }
+        #right{
+            width: 4px;
+            height: calc(300px * 300 / 428);
+            position: absolute;
+            background-color: #dddee0;
+            right: 2px;
+            border-radius: 10px;
+            display: none;
+        }   
+    </style>
+
+</head>
+<body>
+    <div id="outset">
+        <div id="right"></div>
+        <!--   <div id='bottom'></div> -->
+        <div id="box">
+            <div id="centent">
+                <p>1</p>
+                <p>2</p>
+                <p>3</p>
+                <p>4</p>
+                <p>5</p>
+                <p>6</p>
+                <p>7</p>
+                <p>8</p>
+                <p>9</p>
+                <p>10</p>
+                <p>11</p>
+                <p>12</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
