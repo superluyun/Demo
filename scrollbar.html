@@ -26,17 +26,37 @@
         #centent{
             height: auto;
         }
+
         #right{
             width: 4px;
-            height: calc(300px * 300 / 428);
             position: absolute;
             background-color: #dddee0;
             right: 2px;
             border-radius: 10px;
             display: none;
+            /* transition: transform 10s; */
+            
         }   
     </style>
-
+    <script>
+        window.onload = function(){
+            var right = document.querySelector('#right');
+            var outset = document.querySelector('#outset');
+            var centent = document.querySelector('#centent');
+            var box = document.querySelector('#box');
+            right.style.height = outset.scrollHeight*outset.scrollHeight/centent.scrollHeight + 'px';
+            var y = 100;
+            // right.style.transform = `translateY(${y}px) 1s`;
+            var dis = 0;
+            box.addEventListener('wheel', function(q){
+                dis += 100;
+                
+                right.style.transform = `translateY(${dis}px)`
+            });
+        }
+        
+        
+    </script>
 </head>
 <body>
     <div id="outset">
@@ -55,7 +75,6 @@
                 <p>9</p>
                 <p>10</p>
                 <p>11</p>
-                <p>12</p>
             </div>
         </div>
     </div>
