@@ -15,7 +15,8 @@
             position: relative;
         }
          #outset:hover #right{
-            display: block;
+            /* display: block; */
+            opacity:1
          }
         #box{
             height: 317px;
@@ -33,9 +34,8 @@
             background-color: #dddee0;
             right: 2px;
             border-radius: 10px;
-            display: none;
-            /* transition: transform 10s; */
-            
+            opacity: 0;
+            transition: transform opacity;
         }   
     </style>
     <script>
@@ -45,15 +45,22 @@
             var centent = document.querySelector('#centent');
             var box = document.querySelector('#box');
             right.style.height = outset.scrollHeight*outset.scrollHeight/centent.scrollHeight + 'px';
-            var y = 100;
+            console.log(outset.scrollHeight/centent.scrollHeight)
             // right.style.transform = `translateY(${y}px) 1s`;
             var dis = 0;
             box.addEventListener('wheel', function(q){
-                dis += 100;
-                
-                right.style.transform = `translateY(${dis}px)`
+                dis += 12.531 * outset.scrollHeight/centent.scrollHeight;
+                right.style.transform = `translateY(${dis}%)`
+                setTimeout(function(){
+                    getScrollTop();
+                },200);
             });
+            // box.scrollTop = 100;
+            function getScrollTop(){
+                console.log(box.scrollTop);
+            }    
         }
+        
         
         
     </script>
@@ -75,6 +82,7 @@
                 <p>9</p>
                 <p>10</p>
                 <p>11</p>
+
             </div>
         </div>
     </div>
