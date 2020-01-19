@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>footer</title>
+    <style>
+        body,html{
+            margin: 0;
+        }
+/* --------------------------------------------------------- 方法 1 ---------------------------------------------------------- */
+        /* .Site {
+            display: flex;
+            display: -webkit-flex; 
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .Site-content{
+            flex: 1;
+        }
+        footer,header{
+            background-color: #f8f8f8;
+            height: 50px;
+        } */
+/* --------------------------------------------------------- 方法 2 ---------------------------------------------------------- */
+        .Site{
+            width: 100%;
+            background-color: #f0f0f0;
+            position: relative;
+        }
+        .Site-content{
+            height: 600px;
+            background-color: #fff;
+        }
+        header{
+            height: 50px;
+            width: 100%;
+            background-color: #458FD2;
+            position: absolute;
+            top: 0;
+        }
+        footer{
+            height: 50px;
+            width: 100%;
+            background-color: #458FD2;
+            position: absolute;
+            top: calc(100% - 50px);
+        }
+    </style>
+</head>
+<body>
+    <div class="Site">
+        <header>header</header>
+        <main class="Site-content">main</main>
+        <footer>footer</footer>
+    </div>
+    
+    <script>
+        var site = document.querySelector('.Site');
+
+        window.onload = function(){ // 页面初始化
+            site.style.minHeight = `${window.innerHeight}px`;
+        }
+
+        window.onresize = function(){ // 页面尺寸发生变化时调用
+            site.style.minHeight = `${window.innerHeight}px`;
+        }
+    </script>
+</body>
+</html> 
