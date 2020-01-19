@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>太极八卦</title>
+    <style>
+        html{
+            background-color: #f8f8f8;
+            height: 100vh;
+        }
+        body{
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+        .f{
+            width: 300px;
+            height: 300px;
+            position: relative;
+        }
+        .cover{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: red;
+        }
+        .d{
+            width: 200px;
+            height: 200px;
+            transform: translate(25%,25%);
+            border: rgba(0, 0, 0) solid 0.5px;
+            background-image: linear-gradient(to right,#000 0%,#000 50%,#fff 50%,#fff 100%);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .d1{
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .d1 div{
+            width: 20px;
+            height: 20px;
+            background-color: #000;
+            border-radius: 50%;
+        }
+        .d2{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .d2 div{
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+        .c{
+            width: 30px;
+            height: 5px;
+            background-color: #000;
+            margin: 5px 0;
+        }
+        .j{
+            
+        }
+        .乾{
+            transform: translate(135px);
+        }
+        .巽{
+            transform: translate(190px,100px) rotate(45deg);
+        }
+        .坎{
+            transform: translate(132px,200px) rotate(90deg);
+        }
+        .艮{
+            transform: translate(190px,40px) rotate(-45deg);
+        }
+        .坤{
+            transform: translate(135px,146px);
+        }
+        .震{
+            transform: translate(0px,180px) rotate(45deg);
+        } 
+        .离{
+            transform: translate(0px,100px) rotate(90deg);
+        }
+        .兑{
+            
+        }
+    </style>
+    
+</head>
+<body>
+
+    <div class='f'>
+        <div class="cover">
+            <div class="乾">
+                <div class="c"></div>
+                <div class="c"></div>
+                <div class="c"></div>
+            </div>
+            <div class="巽">
+                <div class="c"></div>
+                <div class="c"></div>
+                <div class="c"></div>
+            </div>
+            <div class="坎">
+                <div class="c"></div>
+                <div class="c"></div>
+                <div class="c"></div>
+            </div>
+            <div class="艮">
+                <div class="c"></div>
+                <div class="c"></div>
+                <div class="c"></div>
+            </div>
+            <div class="坤">
+                <div class="c"></div>
+                <div class="c"></div>
+                <div class="c"></div>
+            </div>
+            <div class="震">
+                <div class="c"></div>
+                <div class="c"></div>
+                <div class="c"></div>
+            </div>
+            <div class="离">
+                <div class="c"></div>
+                <div class="c"></div>
+                <div class="c"></div>
+            </div>
+        </div>
+        <div class="d">
+            <div class="d1">
+                <div></div>
+            </div>
+            <div class="d2">
+                <div></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
