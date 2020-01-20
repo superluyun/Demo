@@ -24,25 +24,21 @@
         .Site{
             width: 100%;
             background-color: #f0f0f0;
-            position: relative;
         }
         .Site-content{
             height: 600px;
-            background-color: #fff;
+            width: 100%;
+            background-color: #fff;  
         }
         header{
             height: 50px;
             width: 100%;
             background-color: #458FD2;
-            position: absolute;
-            top: 0;
         }
         footer{
             height: 50px;
             width: 100%;
             background-color: #458FD2;
-            position: absolute;
-            top: calc(100% - 50px);
         }
     </style>
 </head>
@@ -54,14 +50,14 @@
     </div>
     
     <script>
-        var site = document.querySelector('.Site');
+        var site = document.querySelector('.Site-content');
 
         window.onload = function(){ // 页面初始化
-            site.style.minHeight = `${window.innerHeight}px`;
+            site.style.minHeight = `${window.innerHeight-100}px`;
         }
 
         window.onresize = function(){ // 页面尺寸发生变化时调用
-            site.style.minHeight = `${window.innerHeight}px`;
+            site.style.minHeight = `${window.innerHeight-100}px`;
         }
     </script>
 </body>

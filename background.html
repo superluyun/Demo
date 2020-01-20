@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>background</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        .b_img{
+            width: 100%;
+            height: 100vh;
+            background: url(https://picjumbo.com/wp-content/uploads/golden-gate-bridge-from-battery-spencer-viewpoint_free_stock_photos_picjumbo_HNCK3212-2210x1474.jpg);
+            /* background-position: 0% 30%; */
+            transition: background-image 1.5s;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="b_img" onclick="change()"></div>
+    <script>
+        var img_arr = [
+            'https://picjumbo.com/wp-content/uploads/golden-gate-bridge-from-battery-spencer-viewpoint_free_stock_photos_picjumbo_HNCK3212-2210x1474.jpg',
+            'https://picjumbo.com/wp-content/uploads/cityscape-view-of-financial-district-skyscrapers-in-san-francisco-california-2210x1473.jpg',
+        ]
+        var i = 1;
+        function change(){
+            console.log(i);
+            var  b_img = document.querySelector('.b_img');
+            b_img.style.backgroundImage = `url(${img_arr[i]})`;
+            i++;
+            if(i==2){
+                i=0;
+            }
+        }
+    </script>
+</body>
+</html>
